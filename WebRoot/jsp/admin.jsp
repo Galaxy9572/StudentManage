@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<div id="title">系统管理</div>
+	<div id="title"><h1 id="h1">系统管理</h1></div>
 	<div id="manage">
 		<table>
 			<tr>

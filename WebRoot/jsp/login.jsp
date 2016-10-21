@@ -28,29 +28,34 @@
 		return true;
 	}
 </script>
+<link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
 <body>
-	<form>
-		<table>
-			<tr>
-				<td>身份：</td>
-				<td>老师<input type="radio" value="T" name="ID">学生<input
-					type="radio" value="S" name="ID"></td>
-			</tr>
-			<tr>
-				<td>编号（学号）：</td>
-				<td><input type="text" name="ID" id="ID"></td>
-			</tr>
-			<tr>
-				<td>密码：</td>
-				<td><input type="password" name="password" id="password"></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="button" value="登 录" onclick="r();" />
-					<input type="reset" value="重 置" /></td>
-			</tr>
-
-		</table>
-	</form>
+	<div id="title">
+		<h1 id="h1">登录</h1>
+	</div>
+	<div id="login">
+		<form>
+			<table>
+				<tr>
+					<td>身份：</td>
+					<td>老师<input type="radio" value="T" name="ID">学生<input
+						type="radio" value="S" name="ID"></td>
+				</tr>
+				<tr>
+					<td>编号（学号）：</td>
+					<td><input type="text" name="ID" id="ID"></td>
+				</tr>
+				<tr>
+					<td>密码：</td>
+					<td><input type="password" name="password" id="password"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" value="登 录"
+						onclick="r();" /> <input type="reset" value="重 置" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
 </body>
 </html>
