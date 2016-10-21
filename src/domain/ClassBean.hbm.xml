@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="domain">
+  <class name="ClassBean" table="Class" catalog="StudentManage">
+     <id name="classID" type="java.lang.String">
+         <column name="classID" length="10"></column>
+     </id>
+     <property name="className" type="java.lang.String">
+        <column name="className" length="20" />
+     </property>
+     <property name="classNum" type="java.lang.Integer">
+        <column name="classNum" length="11" />
+     </property>
+     <property name="teacherID" type="java.lang.String">
+        <column name="teacherID" length="10" />
+     </property>
+  </class>
+</hibernate-mapping>
