@@ -17,9 +17,9 @@
 	<property name="dialect">
 		org.hibernate.dialect.MySQLDialect
 	</property>
-	<mapping resource="domain/ClassBean.hbm.xml" />
-	<mapping resource="domain/StudentBean.hbm.xml" />
-	<mapping resource="domain/TeacherBean.hbm.xml" />
+	<mapping resource="config/ClassBean.hbm.xml" />
+	<mapping resource="config/StudentBean.hbm.xml" />
+	<mapping resource="config/TeacherBean.hbm.xml" />
 </session-factory>
 
 </hibernate-configuration>
