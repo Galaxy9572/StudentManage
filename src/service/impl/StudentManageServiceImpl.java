@@ -20,8 +20,10 @@ public class StudentManageServiceImpl implements StudentManageService {
 	}
 
 	@Override
-	public boolean login(String stuName, String password) {
-		// TODO Auto-generated method stub
+	public boolean login(String stuNum, String password) {
+		if(password.equals(studentDao.queryPassword(stuNum))){
+			return true;
+		}
 		return false;
 	}
 
@@ -32,32 +34,29 @@ public class StudentManageServiceImpl implements StudentManageService {
 
 	@Override
 	public boolean deleteStudentByNum(String stuNum) {
-		// TODO Auto-generated method stub
-		return false;
+		return studentDao.deleteStudentByNum(stuNum);
 	}
 
 	@Override
 	public StudentBean updateStudentInfo(StudentBean studentBean) {
-		// TODO Auto-generated method stub
-		return null;
+		return studentDao.updateStudentInfo(studentBean);
 	}
 
 	@Override
 	public List<StudentBean> queryStudentByName(String stuName) {
-		// TODO Auto-generated method stub
-		return null;
+		return studentDao.queryStudentByName(stuName);
 	}
 
 	@Override
 	public StudentBean queryStudentByNum(String stuNum) {
-		System.out.println("StudentManageServiceImpl");
 		return studentDao.queryStudentByNum(stuNum);
 	}
+	
+	
 
 	@Override
 	public List<ClassBean> listAllSelectedClasses(String stuNum) {
-		// TODO Auto-generated method stub
-		return null;
+		return studentDao.listAllSelectedClasses(stuNum);
 	}
 
 }

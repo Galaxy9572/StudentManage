@@ -1,20 +1,31 @@
 package service.impl;
 
+import java.util.List;
+
+import dao.impl.ClassDaoImpl;
 import domain.ClassBean;
 import service.ClassManageService;
 
 public class ClassManageServiceImpl implements ClassManageService {
-
+	private ClassDaoImpl classDao=new ClassDaoImpl();
 	@Override
 	public boolean createClass(ClassBean classBean) {
-		// TODO Auto-generated method stub
-		return false;
+		return classDao.createClass(classBean);
 	}
 
 	@Override
 	public ClassBean updateClass(ClassBean classBean) {
-		// TODO Auto-generated method stub
-		return null;
+		return classDao.updateClass(classBean);
+	}
+
+	@Override
+	public ClassBean queryClassByID(String classID) {
+		return classDao.queryClassByID(classID);
+	}
+
+	@Override
+	public List<ClassBean> listAllClasses() {
+		return classDao.listAllClasses();
 	}
 
 }

@@ -37,4 +37,15 @@ public class TeacherDaoImpl implements TeacherDao {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public String queryPassword(String teacherID) {
+		List<TeacherBean> resList=session.createQuery("from TeacherBean t where t.teacherID='"+teacherID+"'").list();
+		if(resList.isEmpty()){
+			return null;
+		}
+		System.out.println(resList.get(0).getPassword());
+		return resList.get(0).getPassword();
+	}
+
 }

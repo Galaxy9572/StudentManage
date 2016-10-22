@@ -55,6 +55,13 @@ public interface StudentDao {
 	public StudentBean queryStudentByNum(String stuNum);
 	
 	/**
+	 * 根据学号查询学生的密码
+	 * @param stuNum
+	 * @return 成功则返回密码，否则返回null
+	 */
+	public String queryPassword(String stuNum);
+	
+	/**
 	 * 列出指定学号的的学生的所有所选课程
 	 * 
 	 * @param stuNum

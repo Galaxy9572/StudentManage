@@ -1,19 +1,16 @@
 package domain;
 
-import java.util.List;
-
 public class ClassBean {
 	private String classID;//课程ID
 	private String className;//课程名
-	private String teacherID;//授课老师
 	private int classNum;//课程节数
+	private String teacherID;//授课老师
 	
-	private List<StudentBean> students;
-	public List<StudentBean> getStudents() {
-		return students;
-	}
-	public void setStudents(List<StudentBean> students) {
-		this.students = students;
+	public ClassBean(String classID, String className, int classNum, String teacherID) {
+		this.classID = classID;
+		this.className = className;
+		this.classNum = classNum;
+		this.teacherID = teacherID;
 	}
 	public String getClassName() {
 		return className;

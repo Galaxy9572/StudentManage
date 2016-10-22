@@ -8,7 +8,7 @@
 <html>
 <head>
 <title>老师注册</title>
-<link rel="stylesheet" type="text/css" href="../css/teacherReg.css">
+<link rel="stylesheet" type="text/css" href="/StudentManage/css/teacherReg.css">
 </head>
 
 <body>
@@ -49,7 +49,10 @@
 					<td><input type="password" name="cfpassword" onblur=a1()></td>
 				</tr>
 				<tr>
-					<td colspan="3"><input type="submit" value="确认" name="yes"
+					<td colspan="2"><hr></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="注册" name="yes"
 						onclick=a2()> <input type="reset" value="重置" name="reset"></td>
 				</tr>
 			</table>

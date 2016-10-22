@@ -10,37 +10,20 @@
 <html>
 <head>
 <title>登录</title>
-<script>
-	function r() {
-		var teacherID = document.getElementById("teacherID");
-
-		var pass = document.getElementById("password");
-		if (teacherID.value == "") {
-			alert("请输入教师编号");
-			teacherID.focus();
-			return;
-		}
-		if (pass.value == "") {
-			alert("请输入密码");
-			return;
-
-		}
-		return true;
-	}
-</script>
 <link rel="stylesheet" type="text/css" href="../css/login.css">
+<script type="text/javascript" src="/StudentManage/js/login.js"></script>
 </head>
 <body>
 	<div id="title">
 		<h1 id="h1">登录</h1>
 	</div>
 	<div id="login">
-		<form>
+		<form action="/StudentManage/RegLoginServlet" method="post" id="form">
 			<table>
 				<tr>
 					<td>身份：</td>
-					<td>老师<input type="radio" value="T" name="ID">学生<input
-						type="radio" value="S" name="ID"></td>
+					<td>老师<input type="radio" value="T" name="ID"  id="teacher">学生<input
+						type="radio" value="S" name="ID" id="student"></td>
 				</tr>
 				<tr>
 					<td>编号（学号）：</td>
@@ -51,8 +34,11 @@
 					<td><input type="password" name="password" id="password"></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="button" value="登 录"
-						onclick="r();" /> <input type="reset" value="重 置" /></td>
+					<td colspan="2"><hr></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="登 录"
+						onclick="login();" /> <input type="reset" value="重 置" /></td>
 				</tr>
 			</table>
 		</form>

@@ -12,11 +12,13 @@
 <title>系统管理</title>
 <link rel="stylesheet" type="text/css"
 	href="/StudentManage/css/admin.css">
-	<script type="text/javascript" src="/StudentManage/js/admin.js"></script>
+<script type="text/javascript" src="/StudentManage/js/admin.js"></script>
 </head>
 
 <body>
-	<div id="title"><h1 id="h1">系统管理</h1></div>
+	<div id="title">
+		<h1 id="h1">系统管理</h1>
+	</div>
 	<div id="manage">
 		<table>
 			<tr>
@@ -25,7 +27,8 @@
 			<tr>
 				<td>按学号查找：</td>
 				<td><input type="text" id="findSByNum"></td>
-				<td><input type="button" id="bt_findSByNum" value="查找" onclick="sendToServer()"></td>
+				<td><input type="button" id="bt_findSByNum" value="查找"
+					onclick="sendToServer()"></td>
 			</tr>
 			<tr>
 				<td>按姓名查找：</td>
@@ -37,7 +40,9 @@
 				<td><input type="text" id="delSByNum"></td>
 				<td><input type="button" id="bt_delSByNum" value="删除"></td>
 			</tr>
-			<tr><td colspan="3"><hr></td></tr>
+			<tr>
+				<td colspan="3"><hr></td>
+			</tr>
 			<tr>
 				<th colspan="3">老师管理</th>
 			</tr>
@@ -52,17 +57,15 @@
 				<td><input type="button" id="bt_findTByName" value="查找"></td>
 			</tr>
 			<tr>
-				<td><input type="button" id="bt_newT" value="添加新老师"></td>
+				<td colspan="3"><hr></td>
 			</tr>
-			<tr><td colspan="3"><hr></td></tr>
 			<tr>
 				<th colspan="3">课程管理</th>
 			</tr>
 			<tr>
 				<td><input type="button" id="listAll" value="查看所有课程"></td>
-			</tr>
-			<tr>
-				<td><input type="button" id="addClass" value="添加新课程"></td>
+				<td><input type="button" id="addClass" value="添加新课程"
+					onclick="window.open('/StudentManage/jsp/addClass.jsp')"></td>
 			</tr>
 		</table>
 	</div>

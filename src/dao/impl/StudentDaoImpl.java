@@ -52,15 +52,23 @@ public class StudentDaoImpl implements StudentDao {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public StudentBean queryStudentByNum(String stuNum) {
-		System.out.println("StudentDaoImpl");
 		List<StudentBean> resList=session.createQuery("from StudentBean stu where stu.stuNum='"+stuNum+"'").list();
-		System.out.println(resList.isEmpty());
 		if(resList.isEmpty()){
 			return null;
 		}
 		return resList.get(0);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String queryPassword(String stuNum){
+		List<StudentBean> resList=session.createQuery("from StudentBean stu where stu.stuNum='"+stuNum+"'").list();
+		if(resList.isEmpty()){
+			return null;
+		}
+		return resList.get(0).getPassword();
 	}
 
 	@Override

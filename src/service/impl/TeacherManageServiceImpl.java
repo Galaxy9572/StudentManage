@@ -20,21 +20,21 @@ public class TeacherManageServiceImpl implements TeacherManageService {
 	}
 	
 	@Override
-	public boolean login(String teacherName, String password) {
-
+	public boolean login(String teacherID, String password) {
+		if(password.equals(teacherDao.queryPassword(teacherID))){
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public List<TeacherBean> queryTeacherByName(String teacherName) {
-		// TODO Auto-generated method stub
-		return null;
+		return teacherDao.queryTeacherByName(teacherName);
 	}
 
 	@Override
 	public TeacherBean queryTeacherByTeacherId(String teacherId) {
-		// TODO Auto-generated method stub
-		return null;
+		return teacherDao.queryTeacherByTeacherId(teacherId);
 	}
 
 }

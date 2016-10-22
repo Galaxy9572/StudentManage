@@ -1,19 +1,18 @@
 @CHARSET "UTF-8";
-
 body {
 	background-color: #569cf1;
 	margin: 0px;
 	padding: 0px;
 }
 
-#title {
+#title{
 	font-size: 30px;
 	font-family: 微软雅黑;
-	background: #fff;
+	background:#fff;
 	text-align: center;
 }
 
-#reg {
+#add{
 	font-family: "微软雅黑";
 	font-size: 16px;
 	text-align: center;

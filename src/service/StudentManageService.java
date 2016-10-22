@@ -21,7 +21,7 @@ public interface StudentManageService {
 	 * @param password
 	 * @return 成功则返回true，否则返回false
 	 */
-	public boolean login(String stuName, String password);
+	public boolean login(String stuNum, String password);
 
 	/**
 	 * 根据姓名删除学生
