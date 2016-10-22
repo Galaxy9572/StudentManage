@@ -1,6 +1,5 @@
 window.onload = function() {
         var xhr = getXmlHttpRequest();
-        alert("js载入···");
 }
 
 function checkStuName() {
@@ -22,7 +21,6 @@ function checkStuNum() {
                 stuNum_info.innerHTML = "";
         }
         xhr.onreadystatechange = function() {
-                alert(xhr.readyState);
                 if (xhr.readyState == 4) {
                         if (xhr.status >= 200 || xhr.status <= 304) {
                                 xhr.open("post", "/StudentManage/RegLoginServlet?cmd=valStuNum", true);
@@ -67,7 +65,7 @@ function confirmPassword() {
       var cfpassword = document.getElementById("cfpassword").value;
       alert(cfpassword);
       var cfpassword_info = document.getElementById("cfpassword_info");
-      if (password.!=cfpassword) {
+      if (password!=cfpassword) {
               cfpassword_info.innerHTML = "<font color='red'>两次密码输入不一致</font>";
       } else {
               cfpassword_info.innerHTML = "";

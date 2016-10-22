@@ -8,19 +8,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <link href="/homePage/css/background.css" rel="stylesheet" type="text/css" />
-    <title>登录状态</title>
     
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+    <title>注册结果</title>
+	<link rel="stylesheet" type="text/css" href="/StudentManage/css/regResult.css">
   </head>
   
   <body>
-    <h1>登录成功！</h1>
+    <div id="regState"><h1><font color="white">${requestScope.regResult}</font></h1></div>
   </body>
 </html>

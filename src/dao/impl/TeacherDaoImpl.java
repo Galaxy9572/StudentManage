@@ -31,10 +31,14 @@ public class TeacherDaoImpl implements TeacherDao {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public TeacherBean queryTeacherByTeacherId(String teacherId) {
-		// TODO Auto-generated method stub
-		return null;
+	public TeacherBean queryTeacherByTeacherId(String teacherID) {
+		List<TeacherBean> resList=session.createQuery("from TeacherBean t where t.teacherID='"+teacherID+"'").list();
+		if(resList.isEmpty()){
+			return null;
+		}
+		return resList.get(0);
 	}
 
 	@SuppressWarnings("unchecked")
