@@ -22,7 +22,7 @@
 		<h1 id="h1">添加新课程</h1>
 	</div>
 	<div id="add">
-		<form action="/StudentManage/ClassOperateServlet" method="post">
+		<form action="/StudentManage/ClassOperateServlet?cmd=addClass" method="post">
 			<table>
 				<tr>
 					<td>课程编号：</td>
@@ -33,11 +33,11 @@
 					<td><input type="text" name="className"></td>
 				</tr>
 				<tr>
-					<td>课程节数：</td>
+					<td>课时：</td>
 					<td><input type="text" name="classNum"></td>
 				</tr>
 				<tr>
-					<td>授课老师：</td>
+					<td>授课老师编号：</td>
 					<td><input type="text" name="teacherID"></td>
 				</tr>
 				<tr>

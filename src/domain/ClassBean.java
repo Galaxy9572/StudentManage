@@ -6,6 +6,9 @@ public class ClassBean {
 	private int classNum;//课程节数
 	private String teacherID;//授课老师
 	
+	public ClassBean() {
+	}
+	
 	public ClassBean(String classID, String className, int classNum, String teacherID) {
 		this.classID = classID;
 		this.className = className;

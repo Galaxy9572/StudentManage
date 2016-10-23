@@ -3,6 +3,7 @@ package dao.impl;
 import java.util.List;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -18,7 +19,7 @@ public class StudentDaoImpl implements StudentDao {
 	@Override
 	public boolean createStudent(StudentBean studentBean) {
 		try {
-			Transaction transaction=session.beginTransaction();
+			Transaction transaction = session.beginTransaction();
 			session.save(studentBean);
 			transaction.commit();
 		} catch (HibernateException e) {
@@ -30,14 +31,22 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Override
 	public boolean deleteStudentByName(String stuName) {
-		
+
 		return true;
 	}
 
 	@Override
 	public boolean deleteStudentByNum(String stuNum) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			Transaction t = session.beginTransaction();
+			Query q = session.createQuery("delete StudentBean where stuNum='" + stuNum + "'");
+			q.executeUpdate();
+			t.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 	@Override
@@ -46,26 +55,33 @@ public class StudentDaoImpl implements StudentDao {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<StudentBean> queryStudentByName(String stuName) {
-		// TODO Auto-generated method stub
-		return null;
+		List<StudentBean> resList = session.createQuery("from StudentBean stu where stu.stuName='" + stuName + "'")
+				.list();
+		if (resList.isEmpty()) {
+			return null;
+		}
+		return resList;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public StudentBean queryStudentByNum(String stuNum) {
-		List<StudentBean> resList=session.createQuery("from StudentBean stu where stu.stuNum='"+stuNum+"'").list();
-		if(resList.isEmpty()){
+		List<StudentBean> resList = session.createQuery("from StudentBean stu where stu.stuNum='" + stuNum + "'")
+				.list();
+		if (resList.isEmpty()) {
 			return null;
 		}
 		return resList.get(0);
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public String queryPassword(String stuNum){
-		List<StudentBean> resList=session.createQuery("from StudentBean stu where stu.stuNum='"+stuNum+"'").list();
-		if(resList.isEmpty()){
+	public String queryPassword(String stuNum) {
+		List<StudentBean> resList = session.createQuery("from StudentBean stu where stu.stuNum='" + stuNum + "'")
+				.list();
+		if (resList.isEmpty()) {
 			return null;
 		}
 		return resList.get(0).getPassword();

@@ -31,8 +31,8 @@
 				</tr>
 				<tr>
 					<td>性别：</td>
-					<td>男<input type="radio" name="gender" value="male" checked="checked">女<input
-						type="radio" name="gender" value="female"></td>
+					<td>男<input type="radio" name="gender" value="男" checked="checked">女<input
+						type="radio" name="gender" value="女"></td>
 				</tr>
 				<tr>
 					<td>年龄：</td>

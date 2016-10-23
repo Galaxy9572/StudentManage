@@ -49,7 +49,6 @@ function checkAge() {
 
 function checkPassword() {
         var password = document.getElementById("password").value;
-        alert(password);
         var password_info = document.getElementById("password_info");
         if (password.trim() == "") {
                 password_info.innerHTML = "<font color='red'>密码不能为空</font>";
@@ -60,10 +59,8 @@ function checkPassword() {
 
 function confirmPassword() {
       var password = document.getElementById("password").value;
-      alert(password);
       var password_info = document.getElementById("password_info");
       var cfpassword = document.getElementById("cfpassword").value;
-      alert(cfpassword);
       var cfpassword_info = document.getElementById("cfpassword_info");
       if (password!=cfpassword) {
               cfpassword_info.innerHTML = "<font color='red'>两次密码输入不一致</font>";

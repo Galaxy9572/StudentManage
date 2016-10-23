@@ -28,17 +28,19 @@
 				<td>按学号查找：</td>
 				<td><input type="text" id="findSByNum"></td>
 				<td><input type="button" id="bt_findSByNum" value="查找"
-					onclick="sendToServer()"></td>
+					onclick="findStuByStuNum()"></td>
 			</tr>
 			<tr>
 				<td>按姓名查找：</td>
 				<td><input type="text" id="findSByName">
-				<td><input type="button" id="bt_findSByName" value="查找"></td>
+				<td><input type="button" id="bt_findSByName" value="查找"
+					onclick="findStuByStuName()"></td>
 			</tr>
 			<tr>
 				<td>按学号删除学生：</td>
 				<td><input type="text" id="delSByNum"></td>
-				<td><input type="button" id="bt_delSByNum" value="删除"></td>
+				<td><input type="button" id="bt_delSByNum" value="删除"
+					onclick="delStuByStuNum()"></td>
 			</tr>
 			<tr>
 				<td colspan="3"><hr></td>
@@ -63,7 +65,8 @@
 				<th colspan="3">课程管理</th>
 			</tr>
 			<tr>
-				<td><input type="button" id="listAll" value="查看所有课程"></td>
+				<td><input type="button" id="listAll" value="查看所有课程"
+					onclick="window.open('/StudentManage/jsp/allClasses.jsp')"></td>
 				<td><input type="button" id="addClass" value="添加新课程"
 					onclick="window.open('/StudentManage/jsp/addClass.jsp')"></td>
 			</tr>

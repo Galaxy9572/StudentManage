@@ -32,10 +32,14 @@ public class ClassDaoImpl implements ClassDao {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<ClassBean> listAllClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		List<ClassBean> resList=session.createQuery("from ClassBean").list();
+		if(resList.isEmpty()){
+			return null;
+		}
+		return resList;
 	}
 
 	@SuppressWarnings("unchecked")

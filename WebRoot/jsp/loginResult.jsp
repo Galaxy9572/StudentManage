@@ -8,8 +8,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
     <title>登录结果</title>
+    <meta http-equiv="refresh" content="3;url=/StudentManage/index.jsp"> 
     <link rel="stylesheet" type="text/css" href="/StudentManage/css/loginResult.css">
   </head>
   
