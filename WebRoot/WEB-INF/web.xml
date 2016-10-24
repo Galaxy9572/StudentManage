@@ -4,4 +4,39 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+  	<servlet-name>RegLoginServlet</servlet-name>
+  	<servlet-class>controller.RegLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RegLoginServlet</servlet-name>
+  	<url-pattern>/RegLoginServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>StudentOperateServlet</servlet-name>
+  	<servlet-class>controller.StudentOperateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>StudentOperateServlet</servlet-name>
+  	<url-pattern>/StudentOperateServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>ClassOperateServlet</servlet-name>
+  	<servlet-class>controller.ClassOperateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ClassOperateServlet</servlet-name>
+  	<url-pattern>/ClassOperateServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>TeacherOperateServlet</servlet-name>
+  	<servlet-class>controller.TeacherOperateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TeacherOperateServlet</servlet-name>
+  	<url-pattern>/TeacherOperateServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

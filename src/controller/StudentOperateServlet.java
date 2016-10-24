@@ -3,7 +3,6 @@ package controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,8 +11,11 @@ import domain.StudentBean;
 import service.StudentManageService;
 import service.impl.StudentManageServiceImpl;
 import util.JSONUtil;
-
-@WebServlet("/StudentOperateServlet")
+/**
+ * 操作学生的Servlet
+ * @author 廖俊瑶
+ *
+ */
 public class StudentOperateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private StudentManageService studentService= new StudentManageServiceImpl();

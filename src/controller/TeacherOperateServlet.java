@@ -3,15 +3,17 @@ package controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import service.impl.TeacherManageServiceImpl;
 import util.JSONUtil;
-
-@WebServlet("/TeacherOperateServlet")
+/**
+ * 操作老师的Servlet
+ * @author 廖俊瑶
+ *
+ */
 public class TeacherOperateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private TeacherManageServiceImpl teacherService = new TeacherManageServiceImpl();

@@ -3,7 +3,6 @@ package controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +15,6 @@ import util.JSONUtil;
  * @author 廖俊瑶
  *
  */
-@WebServlet("/ClassOperateServlet")
 public class ClassOperateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ClassManageServiceImpl classService = new ClassManageServiceImpl();
