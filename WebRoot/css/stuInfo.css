@@ -1,13 +1,22 @@
 @CHARSET "UTF-8";
+
 body {
 	background-color: #569cf1;
 	margin: 0px;
 	padding: 0px;
 }
 
-#loginState{
+#title {
+	font-size: 30px;
+	font-family: 微软雅黑;
+	background: #fff;
+	text-align: center;
+}
+
+#info {
 	font-family: "微软雅黑";
 	font-size: 16px;
 	text-align: center;
 	margin-top: 10%;
+	margin-left: 41%;
 }

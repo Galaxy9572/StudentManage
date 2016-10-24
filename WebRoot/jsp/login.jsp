@@ -22,12 +22,12 @@
 			<table>
 				<tr>
 					<td>身份：</td>
-					<td>老师<input type="radio" value="T" name="ID"  id="teacher">学生<input
-						type="radio" value="S" name="ID" id="student"></td>
+					<td>老师<input type="radio"  name="identity" id="teacher">学生<input
+						type="radio" name="identity" id="student"></td>
 				</tr>
 				<tr>
 					<td>编号（学号）：</td>
-					<td><input type="text" name="ID" id="ID"></td>
+					<td><input type="text" name="ID" id="ID" ></td>
 				</tr>
 				<tr>
 					<td>密码：</td>
@@ -38,7 +38,7 @@
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="登 录"
-						onclick="login();" /> <input type="reset" value="重 置" /></td>
+						onclick="login()" /> <input type="reset" value="重 置" /></td>
 				</tr>
 			</table>
 		</form>

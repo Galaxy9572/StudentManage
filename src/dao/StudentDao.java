@@ -2,7 +2,6 @@ package dao;
 
 import java.util.List;
 
-import domain.ClassBean;
 import domain.StudentBean;
 
 public interface StudentDao {
@@ -36,7 +35,7 @@ public interface StudentDao {
 	 * @param studentBean
 	 * @return 成功则返回新的StudentBean，否则返回null
 	 */
-	public StudentBean updateStudentInfo(StudentBean studentBean);
+	public StudentBean updateStudentInfo(StudentBean oldBean,StudentBean newBean);
 
 	/**
 	 * 根据学生姓名查找学生
@@ -65,8 +64,8 @@ public interface StudentDao {
 	 * 列出指定学号的的学生的所有所选课程
 	 * 
 	 * @param stuNum
-	 * @return 成功则返回List<ClassBean>，否则返回null
+	 * @return 成功则返回String，否则返回null
 	 */
-	public List<ClassBean> listAllSelectedClasses(String stuNum);
+	public String listAllSelectedClasses(String stuNum);
 
 }

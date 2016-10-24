@@ -12,6 +12,12 @@ body {
 	text-align: center;
 }
 
+#user{
+	font-size: 20px;
+	float:right;
+	margin-right: 5%;
+}
+
 #table{
 	text-align: center;
 	margin: 0 auto;

@@ -1,14 +1,12 @@
 package domain;
 
-import java.util.List;
-
 public class StudentBean {
 	private String stuName;// 学生名字
 	private String stuNum;// 学号
 	private String gender;// 性别
 	private int age;// 年龄
 	private String password;// 密码
-	private List<ClassBean> selectedClass;// 已选课程
+	private String selected;// 已选课程
 
 	public StudentBean(String stuName, String stuNum, String gender, int age, String password) {
 		this.stuName = stuName;
@@ -45,12 +43,12 @@ public class StudentBean {
 		this.gender = gender;
 	}
 
-	public List<ClassBean> getSelectedClass() {
-		return selectedClass;
+	public String getSelected() {
+		return selected;
 	}
 
-	public void setSelectedClass(List<ClassBean> selectedClass) {
-		this.selectedClass = selectedClass;
+	public void setSelected(String selected) {
+		this.selected = selected;
 	}
 
 	public int getAge() {

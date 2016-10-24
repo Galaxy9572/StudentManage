@@ -8,6 +8,9 @@ public class TeacherBean {
 	private String password;//密码
 	private String major;//所教课程
 	
+	public TeacherBean() {
+		
+	}
 	
 	public TeacherBean(String teacherName,String teacherID, String gender, int age, String major,String password) {
 		this.teacherID = teacherID;

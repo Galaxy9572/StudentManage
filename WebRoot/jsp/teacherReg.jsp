@@ -29,7 +29,7 @@
 				</tr>
 				<tr>
 					<td>性别：</td>
-					<td><input type="radio" value="男" name="gender">男<input
+					<td><input type="radio" value="男" name="gender" checked="checked">男<input
 						type="radio" value="女" name="gender">女</td>
 				</tr>
 				<tr>

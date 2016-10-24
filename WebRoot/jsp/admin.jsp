@@ -28,19 +28,19 @@
 				<td>按学号查找：</td>
 				<td><input type="text" id="findSByNum"></td>
 				<td><input type="button" id="bt_findSByNum" value="查找"
-					onclick="findStuByStuNum()"></td>
+					onclick="findSByStuNum()"></td>
 			</tr>
 			<tr>
 				<td>按姓名查找：</td>
 				<td><input type="text" id="findSByName">
 				<td><input type="button" id="bt_findSByName" value="查找"
-					onclick="findStuByStuName()"></td>
+					onclick="findSByStuName()"></td>
 			</tr>
 			<tr>
 				<td>按学号删除学生：</td>
 				<td><input type="text" id="delSByNum"></td>
 				<td><input type="button" id="bt_delSByNum" value="删除"
-					onclick="delStuByStuNum()"></td>
+					onclick="delSByStuNum()"></td>
 			</tr>
 			<tr>
 				<td colspan="3"><hr></td>
@@ -51,12 +51,14 @@
 			<tr>
 				<td>按编号查找：</td>
 				<td><input type="text" id="findTByNum"></td>
-				<td><input type="button" id="bt_findTByNum" value="查找"></td>
+				<td><input type="button" id="bt_findTByNum" value="查找"
+					onclick="findTByTeacherID()"></td>
 			</tr>
 			<tr>
 				<td>按姓名查找：</td>
 				<td><input type="text" id="findTByName"></td>
-				<td><input type="button" id="bt_findTByName" value="查找"></td>
+				<td><input type="button" id="bt_findTByName" value="查找"
+					onclick="findTByTeacherName()"></td>
 			</tr>
 			<tr>
 				<td colspan="3"><hr></td>

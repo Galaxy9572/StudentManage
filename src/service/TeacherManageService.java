@@ -28,7 +28,7 @@ public interface TeacherManageService {
 	 * @param teacherID
 	 * @return 成功则返回TeacherBean，否则返回null
 	 */
-	public TeacherBean queryTeacherByTeacherId(String teacherId);
+	public TeacherBean queryTeacherByTeacherID(String teacherID);
 
 	/**
 	 * 老师登录

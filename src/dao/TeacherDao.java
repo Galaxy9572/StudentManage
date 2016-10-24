@@ -27,7 +27,7 @@ public interface TeacherDao {
 	 * @param teacherID
 	 * @return 成功则返回TeacherBean，否则返回null
 	 */
-	public TeacherBean queryTeacherByTeacherId(String teacherId);
+	public TeacherBean queryTeacherByTeacherID(String teacherId);
 	
 	/**
 	 * 根据教师ID查找密码

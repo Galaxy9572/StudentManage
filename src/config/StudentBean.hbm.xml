@@ -19,6 +19,9 @@
      <property name="password" type="java.lang.String">
         <column name="password" length="16" />
      </property>
+     <property name="selected" type="java.lang.String">
+        <column name="selected" length="255" />
+     </property>
      
   </class>
 </hibernate-mapping>

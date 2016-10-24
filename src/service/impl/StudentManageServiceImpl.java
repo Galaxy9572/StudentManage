@@ -4,7 +4,6 @@ import java.util.List;
 
 import dao.StudentDao;
 import dao.impl.StudentDaoImpl;
-import domain.ClassBean;
 import domain.StudentBean;
 import service.StudentManageService;
 
@@ -38,8 +37,8 @@ public class StudentManageServiceImpl implements StudentManageService {
 	}
 
 	@Override
-	public StudentBean updateStudentInfo(StudentBean studentBean) {
-		return studentDao.updateStudentInfo(studentBean);
+	public StudentBean updateStudentInfo(StudentBean oldBean,StudentBean newBean) {
+		return studentDao.updateStudentInfo(oldBean,newBean);
 	}
 
 	@Override
@@ -55,7 +54,8 @@ public class StudentManageServiceImpl implements StudentManageService {
 	
 
 	@Override
-	public List<ClassBean> listAllSelectedClasses(String stuNum) {
+	public String listAllSelectedClasses(String stuNum) {
+		System.out.println("service"+","+stuNum);
 		return studentDao.listAllSelectedClasses(stuNum);
 	}
 

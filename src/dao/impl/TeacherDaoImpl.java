@@ -12,10 +12,11 @@ import util.HibernateSessionFactory;
 
 public class TeacherDaoImpl implements TeacherDao {
 	private Session session = HibernateSessionFactory.getSession();
+
 	@Override
 	public boolean createTeacher(TeacherBean teacherBean) {
 		try {
-			Transaction transaction=session.beginTransaction();
+			Transaction transaction = session.beginTransaction();
 			session.save(teacherBean);
 			transaction.commit();
 		} catch (HibernateException e) {
@@ -25,17 +26,23 @@ public class TeacherDaoImpl implements TeacherDao {
 		return true;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<TeacherBean> queryTeacherByName(String teacherName) {
-		// TODO Auto-generated method stub
-		return null;
+		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherName='" + teacherName + "'")
+				.list();
+		if (resList.isEmpty()) {
+			return null;
+		}
+		return resList;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public TeacherBean queryTeacherByTeacherId(String teacherID) {
-		List<TeacherBean> resList=session.createQuery("from TeacherBean t where t.teacherID='"+teacherID+"'").list();
-		if(resList.isEmpty()){
+	public TeacherBean queryTeacherByTeacherID(String teacherID) {
+		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherID='" + teacherID + "'")
+				.list();
+		if (resList.isEmpty()) {
 			return null;
 		}
 		return resList.get(0);
@@ -44,11 +51,11 @@ public class TeacherDaoImpl implements TeacherDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public String queryPassword(String teacherID) {
-		List<TeacherBean> resList=session.createQuery("from TeacherBean t where t.teacherID='"+teacherID+"'").list();
-		if(resList.isEmpty()){
+		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherID='" + teacherID + "'")
+				.list();
+		if (resList.isEmpty()) {
 			return null;
 		}
-		System.out.println(resList.get(0).getPassword());
 		return resList.get(0).getPassword();
 	}
 

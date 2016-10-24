@@ -8,7 +8,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import dao.StudentDao;
-import domain.ClassBean;
 import domain.StudentBean;
 import util.HibernateSessionFactory;
 
@@ -31,7 +30,15 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Override
 	public boolean deleteStudentByName(String stuName) {
-
+		try {
+			Transaction t = session.beginTransaction();
+			Query q = session.createQuery("delete StudentBean where stuName='" + stuName + "'");
+			q.executeUpdate();
+			t.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			return false;
+		}
 		return true;
 	}
 
@@ -50,9 +57,17 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	@Override
-	public StudentBean updateStudentInfo(StudentBean studentBean) {
-		// TODO Auto-generated method stub
-		return null;
+	public StudentBean updateStudentInfo(StudentBean oldBean,StudentBean newBean) {
+		try {
+			Transaction transaction=session.beginTransaction();
+			newBean.setStuNum(oldBean.getStuNum());
+			session.update(newBean);
+			transaction.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return queryStudentByNum(newBean.getStuNum());
 	}
 
 	@SuppressWarnings("unchecked")
@@ -81,16 +96,24 @@ public class StudentDaoImpl implements StudentDao {
 	public String queryPassword(String stuNum) {
 		List<StudentBean> resList = session.createQuery("from StudentBean stu where stu.stuNum='" + stuNum + "'")
 				.list();
+		System.out.println(resList.get(0).getPassword());
 		if (resList.isEmpty()) {
 			return null;
 		}
 		return resList.get(0).getPassword();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<ClassBean> listAllSelectedClasses(String stuNum) {
-		// TODO Auto-generated method stub
-		return null;
+	public String listAllSelectedClasses(String stuNum) {
+		System.out.println("dao"+","+stuNum);
+		List<StudentBean> results = session.createQuery("from StudentBean stu where stu.stuNum='" + stuNum + "'")
+				.list();
+		System.out.println(results.isEmpty());
+		if (results.isEmpty()) {
+			return null;
+		}
+		return results.get(0).getSelected();
 	}
 
 }

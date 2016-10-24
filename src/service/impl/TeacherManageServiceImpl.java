@@ -33,8 +33,8 @@ public class TeacherManageServiceImpl implements TeacherManageService {
 	}
 
 	@Override
-	public TeacherBean queryTeacherByTeacherId(String teacherId) {
-		return teacherDao.queryTeacherByTeacherId(teacherId);
+	public TeacherBean queryTeacherByTeacherID(String teacherID) {
+		return teacherDao.queryTeacherByTeacherID(teacherID);
 	}
 
 }
