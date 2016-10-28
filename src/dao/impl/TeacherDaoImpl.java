@@ -19,6 +19,7 @@ public class TeacherDaoImpl implements TeacherDao {
 			Transaction transaction = session.beginTransaction();
 			session.save(teacherBean);
 			session.flush();
+			session.clear();
 			transaction.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -33,6 +34,7 @@ public class TeacherDaoImpl implements TeacherDao {
 		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherName='" + teacherName + "'")
 				.list();
 		session.flush();
+		session.clear();
 		if (resList.isEmpty()) {
 			return null;
 		}
@@ -45,6 +47,7 @@ public class TeacherDaoImpl implements TeacherDao {
 		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherID='" + teacherID + "'")
 				.list();
 		session.flush();
+		session.clear();
 		if (resList.isEmpty()) {
 			return null;
 		}
@@ -57,6 +60,7 @@ public class TeacherDaoImpl implements TeacherDao {
 		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherID='" + teacherID + "'")
 				.list();
 		session.flush();
+		session.clear();
 		if (resList.isEmpty()) {
 			return null;
 		}

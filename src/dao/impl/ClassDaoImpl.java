@@ -19,6 +19,7 @@ public class ClassDaoImpl implements ClassDao {
 			Transaction transaction=session.beginTransaction();
 			session.save(classBean);
 			session.flush();
+			session.clear();
 			transaction.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -34,6 +35,7 @@ public class ClassDaoImpl implements ClassDao {
 			newBean.setClassID(oldBean.getClassID());
 			session.update(newBean);
 			session.flush();
+			session.clear();
 			transaction.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -47,6 +49,7 @@ public class ClassDaoImpl implements ClassDao {
 	public List<ClassBean> listAllClasses() {
 		List<ClassBean> resList=session.createQuery("from ClassBean").list();
 		session.flush();
+		session.clear();
 		if(resList.isEmpty()){
 			return null;
 		}
@@ -58,6 +61,7 @@ public class ClassDaoImpl implements ClassDao {
 	public ClassBean queryClassByID(String classID) {
 		List<ClassBean> resList=session.createQuery("from ClassBean c where c.classID='"+classID+"'").list();
 		session.flush();
+		session.clear();
 		if(resList.isEmpty()){
 			return null;
 		}
