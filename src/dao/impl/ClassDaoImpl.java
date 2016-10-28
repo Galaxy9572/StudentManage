@@ -11,14 +11,15 @@ import domain.ClassBean;
 import util.HibernateSessionFactory;
 
 public class ClassDaoImpl implements ClassDao {
-	private Session session = HibernateSessionFactory.getSession();
-
+	private Session session=HibernateSessionFactory.getSession();
 	@Override
 	public boolean createClass(ClassBean classBean) {
 		try {
+			session = HibernateSessionFactory.getSession();
 			Transaction transaction=session.beginTransaction();
 			session.save(classBean);
 			transaction.commit();
+			session.flush();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;
@@ -27,15 +28,25 @@ public class ClassDaoImpl implements ClassDao {
 	}
 
 	@Override
-	public ClassBean updateClass(ClassBean classBean) {
-		// TODO Auto-generated method stub
-		return null;
+	public ClassBean updateClass(ClassBean oldBean,ClassBean newBean) {
+		try {
+			Transaction transaction=session.beginTransaction();
+			newBean.setClassID(oldBean.getClassID());
+			session.update(newBean);
+			transaction.commit();
+			session.flush();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return queryClassByID(newBean.getClassID());
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<ClassBean> listAllClasses() {
 		List<ClassBean> resList=session.createQuery("from ClassBean").list();
+		session.flush();
 		if(resList.isEmpty()){
 			return null;
 		}
@@ -46,6 +57,7 @@ public class ClassDaoImpl implements ClassDao {
 	@Override
 	public ClassBean queryClassByID(String classID) {
 		List<ClassBean> resList=session.createQuery("from ClassBean c where c.classID='"+classID+"'").list();
+		session.flush();
 		if(resList.isEmpty()){
 			return null;
 		}

@@ -11,14 +11,15 @@ import domain.TeacherBean;
 import util.HibernateSessionFactory;
 
 public class TeacherDaoImpl implements TeacherDao {
-	private Session session = HibernateSessionFactory.getSession();
-
+	private Session session=HibernateSessionFactory.getSession();
 	@Override
 	public boolean createTeacher(TeacherBean teacherBean) {
 		try {
+			session = HibernateSessionFactory.getSession();
 			Transaction transaction = session.beginTransaction();
 			session.save(teacherBean);
 			transaction.commit();
+			session.flush();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;
@@ -31,6 +32,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public List<TeacherBean> queryTeacherByName(String teacherName) {
 		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherName='" + teacherName + "'")
 				.list();
+		session.flush();
 		if (resList.isEmpty()) {
 			return null;
 		}
@@ -42,6 +44,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public TeacherBean queryTeacherByTeacherID(String teacherID) {
 		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherID='" + teacherID + "'")
 				.list();
+		session.flush();
 		if (resList.isEmpty()) {
 			return null;
 		}
@@ -53,6 +56,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public String queryPassword(String teacherID) {
 		List<TeacherBean> resList = session.createQuery("from TeacherBean t where t.teacherID='" + teacherID + "'")
 				.list();
+		session.flush();
 		if (resList.isEmpty()) {
 			return null;
 		}

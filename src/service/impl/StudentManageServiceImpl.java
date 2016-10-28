@@ -55,8 +55,12 @@ public class StudentManageServiceImpl implements StudentManageService {
 
 	@Override
 	public String listAllSelectedClasses(String stuNum) {
-		System.out.println("service"+","+stuNum);
 		return studentDao.listAllSelectedClasses(stuNum);
+	}
+
+	@Override
+	public boolean selectClass(String stuNum, String className) {
+		return studentDao.updateSelectedClasses(stuNum, className);
 	}
 
 }

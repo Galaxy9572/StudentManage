@@ -59,7 +59,7 @@
 				</tr>
 				<tr>
 					<td><input type="button" value="查看所选课程"  onclick="listSelectedClasses()"/></td>
-					<td><input type="button" value="选课" /></td>
+					<td><input type="button" value="选课"  onclick="window.open('/StudentManage/jsp/selectClass.jsp')"/></td>
 				</tr>
 			</table>
 		</form>

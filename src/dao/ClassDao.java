@@ -16,10 +16,10 @@ public interface ClassDao {
 	/**
 	 * 更新课程信息
 	 * 
-	 * @param ClassBean
+	 * @param ClassBean ClassBean
 	 * @return 成功则返回新的ClassBean，否则返回null
 	 */
-	public ClassBean updateClass(ClassBean classBean);
+	public ClassBean updateClass(ClassBean oldBean,ClassBean newBean);
 
 	/**
 	 * 根据课程ID查找课程

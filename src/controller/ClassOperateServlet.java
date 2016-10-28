@@ -40,6 +40,20 @@ public class ClassOperateServlet extends HttpServlet {
 			response.setContentType("text/json; charset=utf-8");
 			// 给前台Ajax响应
 			response.getWriter().write(listAllClasses(request, response));
+		}else if("modify".equals(cmd)){
+			String classID=request.getParameter("classID");
+			ClassBean classBean=classService.queryClassByID(classID);
+			request.getSession().setAttribute("classBean", classBean);
+		}else if("modifyClass".equals(cmd)){
+			String classID=request.getParameter("classID");
+			String className=request.getParameter("className");
+			int classNum=Integer.valueOf(request.getParameter("classNum"));
+			String teacherID=request.getParameter("teacherID");
+			ClassBean oldBean=classService.queryClassByID(classID);
+			ClassBean newBean=new ClassBean(classID,className,classNum,teacherID);
+			classService.updateClass(oldBean,newBean);
+			request.getSession().setAttribute("classBean", newBean);
+			request.getRequestDispatcher("/jsp/modifyClass.jsp").forward(request, response);
 		}
 	}
 

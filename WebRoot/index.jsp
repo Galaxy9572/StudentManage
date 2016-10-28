@@ -10,7 +10,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>学生课程管理系统</title>
+<title>学生课程管理系统</title>  
 <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 

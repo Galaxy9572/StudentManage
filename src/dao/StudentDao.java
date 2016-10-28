@@ -64,8 +64,16 @@ public interface StudentDao {
 	 * 列出指定学号的的学生的所有所选课程
 	 * 
 	 * @param stuNum
-	 * @return 成功则返回String，否则返回null
+	 * @return 成功则返回String，否则返回""
 	 */
 	public String listAllSelectedClasses(String stuNum);
+	
+	/**
+	 * 更新已选课程
+	 * 
+	 * @param stuNum,className
+	 * @return
+	 */
+	public boolean updateSelectedClasses(String stuNum,String className);
 
 }

@@ -25,15 +25,15 @@ window.onload = function() {
                                         td2.innerHTML="<font color='white'>"+className+"</font>";
                                         td3.innerHTML="<font color='white'>"+classNum+"</font>";
                                         td4.innerHTML="<font color='white'>"+teacherID+"</font>";
-                                        var bt_update=document.createElement("button");
-                                        bt_update.innerHTML="修改";
-                                        bt_update.id="bt_update"+(i+1);
-                                        bt_update.onclick=function(){modifyClass(this)};
+                                        var bt_select=document.createElement("button");
+                                        bt_select.innerHTML="选择";
+                                        bt_select.id="bt_select"+(i+1);
+                                        bt_select.onclick=function(){selectClass(this)};
                                         tr.appendChild(td1);
                                         tr.appendChild(td2);
                                         tr.appendChild(td3);
                                         tr.appendChild(td4);
-                                        tr.appendChild(bt_update);
+                                        tr.appendChild(bt_select);
                                         document.getElementById("classTable").appendChild(tr);
                                 }
                         }
@@ -41,17 +41,19 @@ window.onload = function() {
         }
 }
 
-function modifyClass(obj){
+function selectClass(obj){
+      var xhr = getXmlHttpRequest();
       var index=obj.id.substring(9);
       var classID=document.getElementById("classID"+index).value;
-      var xhr = getXmlHttpRequest();
-      xhr.open("post", "/StudentManage/ClassOperateServlet?cmd=modify" + "&time=" + new Date().getTime(), true);
+      alert(index)
+      xhr.open("post", "/StudentManage/StudentOperateServlet?cmd=selectClass" + "&time=" + new Date().getTime(), true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.send("classID="+index);
       xhr.onreadystatechange = function() {
               if (xhr.readyState == 4) {
                       if (xhr.status == 200 || xhr.status == 304) {
-                	    window.open('/StudentManage/jsp/modifyClass.jsp');
+                	    var data=xhr.responseText;
+                	    alert(data);
                       }
               }
       }

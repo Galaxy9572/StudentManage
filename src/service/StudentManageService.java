@@ -44,7 +44,7 @@ public interface StudentManageService {
 	 * @param studentBean
 	 * @return 成功则返回新的StudentBean，否则返回null
 	 */
-	public StudentBean updateStudentInfo(StudentBean oldBean,StudentBean newBean);
+	public StudentBean updateStudentInfo(StudentBean oldBean, StudentBean newBean);
 
 	/**
 	 * 根据学生姓名查找学生
@@ -69,4 +69,13 @@ public interface StudentManageService {
 	 * @return 成功则返回String，否则返回null
 	 */
 	public String listAllSelectedClasses(String stuNum);
+
+	/**
+	 * 学生选课
+	 * 
+	 * @param stuNum
+	 * @param className
+	 * @return
+	 */
+	public boolean selectClass(String stuNum, String className);
 }

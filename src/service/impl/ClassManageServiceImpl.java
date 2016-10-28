@@ -14,8 +14,8 @@ public class ClassManageServiceImpl implements ClassManageService {
 	}
 
 	@Override
-	public ClassBean updateClass(ClassBean classBean) {
-		return classDao.updateClass(classBean);
+	public ClassBean updateClass(ClassBean oldBean,ClassBean newBean) {
+		return classDao.updateClass(oldBean,newBean);
 	}
 
 	@Override
