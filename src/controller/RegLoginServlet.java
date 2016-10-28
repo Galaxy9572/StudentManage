@@ -93,7 +93,7 @@ public class RegLoginServlet extends HttpServlet {
 		int age = Integer.valueOf(request.getParameter("age"));
 		String password = request.getParameter("password").trim();
 		if (!isStuNumExists(stuNum)) {
-			StudentBean studentBean = new StudentBean(stuName, stuNum, gender, age, password);
+			StudentBean studentBean = new StudentBean(stuName, stuNum, gender, age, password,"");
 			return studentService.reg(studentBean);
 		}
 		return false;

@@ -18,8 +18,8 @@ public class TeacherDaoImpl implements TeacherDao {
 			session = HibernateSessionFactory.getSession();
 			Transaction transaction = session.beginTransaction();
 			session.save(teacherBean);
-			transaction.commit();
 			session.flush();
+			transaction.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;

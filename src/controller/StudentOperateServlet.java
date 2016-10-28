@@ -111,9 +111,8 @@ public class StudentOperateServlet extends HttpServlet {
 
 	private String selectClass(HttpServletRequest request, HttpServletResponse response) {
 		String classID = request.getParameter("classID");
-		System.out.println("classID:" + classID);
 		String className = classServive.queryClassByID(classID).getClassName();
-		System.out.println("className:" + className);
+		System.out.println(className);
 		StudentBean studentBean = (StudentBean) request.getSession().getAttribute("user");
 		if (studentBean == null) {
 			try {
@@ -125,9 +124,7 @@ public class StudentOperateServlet extends HttpServlet {
 			}
 		} else {
 			String stuNum = studentBean.getStuNum();
-			System.out.println("stuNum:" + stuNum);
 			String selectedClass = studentService.listAllSelectedClasses(stuNum);
-			System.out.println("selectedClass:" + selectedClass);
 			if (!selectedClass.contains(className)) {
 				studentService.selectClass(stuNum, className);
 				return "选课成功！";

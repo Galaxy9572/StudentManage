@@ -8,6 +8,15 @@ public class StudentBean {
 	private String password;// 密码
 	private String selected;// 已选课程
 
+	public StudentBean(String stuName, String stuNum, String gender, int age, String password,String selected) {
+		this.stuName = stuName;
+		this.stuNum = stuNum;
+		this.gender = gender;
+		this.age = age;
+		this.password = password;
+		this.selected=selected;
+	}
+	
 	public StudentBean(String stuName, String stuNum, String gender, int age, String password) {
 		this.stuName = stuName;
 		this.stuNum = stuNum;

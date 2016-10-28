@@ -19,8 +19,8 @@ public class StudentDaoImpl implements StudentDao {
 			session = HibernateSessionFactory.getSession();
 			Transaction transaction = session.beginTransaction();
 			session.save(studentBean);
-			transaction.commit();
 			session.flush();
+			transaction.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;
@@ -35,8 +35,8 @@ public class StudentDaoImpl implements StudentDao {
 			Transaction t = session.beginTransaction();
 			Query q = session.createQuery("delete StudentBean where stuName='" + stuName + "'");
 			q.executeUpdate();
-			t.commit();
 			session.flush();
+			t.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;
@@ -51,8 +51,8 @@ public class StudentDaoImpl implements StudentDao {
 			Transaction t = session.beginTransaction();
 			Query q = session.createQuery("delete StudentBean where stuNum='" + stuNum + "'");
 			q.executeUpdate();
-			t.commit();
 			session.flush();
+			t.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;
@@ -67,8 +67,8 @@ public class StudentDaoImpl implements StudentDao {
 			Transaction transaction=session.beginTransaction();
 			newBean.setStuNum(oldBean.getStuNum());
 			session.update(newBean);
-			transaction.commit();
 			session.flush();
+			transaction.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return null;
@@ -120,6 +120,9 @@ public class StudentDaoImpl implements StudentDao {
 		if (results.isEmpty()) {
 			return "";
 		}
+		if(results.get(0).getSelected()==null||"".equals(results.get(0).getSelected())){
+			return "";
+		}
 		return results.get(0).getSelected();
 	}
 
@@ -129,14 +132,17 @@ public class StudentDaoImpl implements StudentDao {
 			session.beginTransaction();
 			String selected=queryStudentByNum(stuNum).getSelected();
 			Query query =null;
-			if("".equals(selected)){
+			if("".equals(selected)||selected==null){
 				query = session.createQuery("update StudentBean s set s.selected ="+"'"+className+"' where stuNum="+"'"+stuNum+"'");
-			}else{
+				session.flush();
+				session.clear();
+			}else if(selected!=null||!selected.equals("")){
 				query = session.createQuery("update StudentBean s set s.selected = "+"'"+selected+","+className+"' where stuNum="+"'"+stuNum+"'");
+				session.flush();
+				session.clear();
 			}
 			query.executeUpdate();
 			session.getTransaction().commit();
-			session.flush();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;

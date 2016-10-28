@@ -34,7 +34,12 @@ public class ClassOperateServlet extends HttpServlet {
 		String cmd = request.getParameter("cmd");
 		System.out.println(cmd);
 		if ("addClass".equals(cmd)) {//如果命令是添加课程
-			addClass(request, response);
+			if(addClass(request, response)){
+				request.setAttribute("result", "课程添加成功！");
+			}else{
+				request.setAttribute("result", "课程添加失败！");
+			}
+			request.getRequestDispatcher("/jsp/result.jsp").forward(request, response);
 		} else if ("listAll".equals(cmd)) {//如果命令是列出所有课程
 			// 设置响应方式为JSON，编码为UTF-8
 			response.setContentType("text/json; charset=utf-8");

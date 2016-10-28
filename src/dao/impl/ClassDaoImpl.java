@@ -18,8 +18,8 @@ public class ClassDaoImpl implements ClassDao {
 			session = HibernateSessionFactory.getSession();
 			Transaction transaction=session.beginTransaction();
 			session.save(classBean);
-			transaction.commit();
 			session.flush();
+			transaction.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;
@@ -33,8 +33,8 @@ public class ClassDaoImpl implements ClassDao {
 			Transaction transaction=session.beginTransaction();
 			newBean.setClassID(oldBean.getClassID());
 			session.update(newBean);
-			transaction.commit();
 			session.flush();
+			transaction.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return null;
