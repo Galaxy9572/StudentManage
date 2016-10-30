@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+body{
+	background: #569cf1;
+	margin: 0px;
+	padding: 0px;
+}
+#nav{
+	background: #569cf1;
+	height:40px;
+	background: #FFF;
+	background: #fff;
+	font-family: 微软雅黑;
+	font-size: 30px;
+}
+
+#home{
+	float:left;
+}
+
+#user{
+	font-size: 30px;
+	float:right;
+	margin-right: 5%;
+	color: #000;
+}
+
+#home{
+	margin-left: 10px;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}

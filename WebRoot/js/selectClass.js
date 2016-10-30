@@ -45,7 +45,6 @@ function selectClass(obj){
       var xhr = getXmlHttpRequest();
       var index=obj.id.substring(9);
       var classID=document.getElementById("classID"+index).value;
-      alert(index)
       xhr.open("post", "/StudentManage/StudentOperateServlet?cmd=selectClass" + "&time=" + new Date().getTime(), true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.send("classID="+index);

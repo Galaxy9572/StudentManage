@@ -23,6 +23,7 @@
 	<div id="title">
 		<h1>所有课程</h1>
 	</div>
+	<jsp:include page="/jsp/home.jsp"/>
 	<div id="result">
 		<table id="classTable" align="center">
 			<tr>

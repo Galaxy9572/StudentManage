@@ -15,6 +15,7 @@
 	<div id="title">
 		<h1 id="h1">老师注册</h1>
 	</div>
+	<jsp:include page="/jsp/home.jsp"/>
 	<div id="reg">
 		<form action="/StudentManage/RegLoginServlet?cmd=teacherReg"
 			method="post">

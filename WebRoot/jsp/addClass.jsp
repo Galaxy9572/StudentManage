@@ -21,6 +21,7 @@
 	<div id="title">
 		<h1 id="h1">添加新课程</h1>
 	</div>
+	<jsp:include page="/jsp/home.jsp"/>
 	<div id="add">
 		<form action="/StudentManage/ClassOperateServlet?cmd=addClass" method="post">
 			<table>

@@ -17,6 +17,7 @@
 	<div id="title">
 		<h1 id="h1">登录</h1>
 	</div>
+	<jsp:include page="/jsp/home.jsp"/>
 	<div id="login">
 		<form action="/StudentManage/RegLoginServlet" method="post" id="form">
 			<table>

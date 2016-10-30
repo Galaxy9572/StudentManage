@@ -19,6 +19,7 @@
 	<div id="title">
 		<h1 id="h1">系统管理</h1>
 	</div>
+	<jsp:include page="/jsp/home.jsp"/>
 	<div id="manage">
 		<table>
 			<tr>

@@ -20,6 +20,7 @@
 	<div id="title">
 		<h1>学生选课</h1>
 	</div>
+	<jsp:include page="/jsp/home.jsp"/>
 	<div id="result">
 		<table id="classTable" align="center">
 			<tr>
