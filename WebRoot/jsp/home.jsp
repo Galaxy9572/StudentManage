@@ -21,12 +21,18 @@
 	<div id="nav">
 		<a id="home" href="/StudentManage/index.jsp"><font color="#000">首页</font></a>
 		<div id="user">
-			<c:if test="${sessionScope.id == 'student'}">
+			<c:choose>
+				<c:when test="${empty sessionScope.id}">
+					<a id="auser" href="/StudentManage/jsp/login.jsp"><font
+						color="#000">请登录</font></a>
+				</c:when>
+				<c:when test="${sessionScope.id == 'student'}">
 			当前用户：<a id="auser" href="jsp/stuInfo.jsp"><font color="#000">${sessionScope.user.stuName}</font></a>
-			</c:if>
-			<c:if test="${sessionScope.id == 'teacher'}">
+				</c:when>
+				<c:when test="${sessionScope.id == 'teacher'}">
 			当前用户：<a id="auser" href=""><font color="#000">${sessionScope.user.teacherName}</font></a>
-			</c:if>
+				</c:when>
+			</c:choose>
 		</div>
 	</div>
 </body>
