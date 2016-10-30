@@ -21,10 +21,10 @@ window.onload = function() {
                                         var td4=document.createElement("td");
                                         var td5=document.createElement("td");
                                         var td6=document.createElement("td");
-                                        td1.innerHTML="<font color='white'>"+classID+"</font>";
-                                        td2.innerHTML="<font color='white'>"+className+"</font>";
-                                        td3.innerHTML="<font color='white'>"+classNum+"</font>";
-                                        td4.innerHTML="<font color='white'>"+teacherID+"</font>";
+                                        td1.innerHTML="<font color='black'>"+classID+"</font>";
+                                        td2.innerHTML="<font color='black'>"+className+"</font>";
+                                        td3.innerHTML="<font color='black'>"+classNum+"</font>";
+                                        td4.innerHTML="<font color='black'>"+teacherID+"</font>";
                                         var bt_update=document.createElement("button");
                                         bt_update.innerHTML="修改";
                                         bt_update.id="bt_update"+(i+1);

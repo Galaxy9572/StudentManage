@@ -24,7 +24,7 @@
 	<jsp:include page="/jsp/home.jsp"/>
 	<div id="add">
 		<form action="/StudentManage/ClassOperateServlet?cmd=addClass" method="post">
-			<table>
+			<table id="tab">
 				<tr>
 					<td>课程编号：</td>
 					<td><input type="text" name="classID"></td>

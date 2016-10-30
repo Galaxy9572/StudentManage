@@ -23,7 +23,7 @@
 	<jsp:include page="/jsp/home.jsp"/>
 	<div id="info" align="center">
 		<form action="/StudentManage/StudentOperateServlet?cmd=updateStuInfo" method="post">
-			<table>
+			<table id="tab">
 				<tr>
 					<td>学生姓名：</td>
 					<td><input type="text" name="stuName" id="stuName" value="${sessionScope.user.stuName }"
@@ -55,12 +55,12 @@
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="修改" ></td>
-					<td><input type="reset" value="重置" /></td>
+					<td><input type="submit" value="       修改      " ></td>
+					<td><input type="reset" value="      重置      " /></td>
 				</tr>
 				<tr>
 					<td><input type="button" value="查看所选课程"  onclick="listSelectedClasses()"/></td>
-					<td><input type="button" value="选课"  onclick="window.open('/StudentManage/jsp/selectClass.jsp')"/></td>
+					<td><input type="button" value="      选课      "  onclick="window.open('/StudentManage/jsp/selectClass.jsp')"/></td>
 				</tr>
 			</table>
 		</form>

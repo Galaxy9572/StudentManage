@@ -13,10 +13,20 @@ body {
 	text-align: center;
 }
 
+#tab{
+	text-align: center;
+	margin: 5% auto;
+}
+
 #info {
+	background:#fff;
+	width:35%;
+	height:35%;
 	font-family: "微软雅黑";
 	font-size: 16px;
 	text-align: center;
-	margin-top: 10%;
-	margin-left: 41%;
+	margin: 5% auto;
+	border: 2px solid;
+	border-color: #fff;
+	border-radius:30px;
 }

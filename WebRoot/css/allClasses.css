@@ -20,21 +20,25 @@ body {
 }
 
 #classTable{
+	background:#fff;
 	font-family: "微软雅黑";
 	font-size: 16px;
 	text-align: center;
 	padding: 5px;
-	border: 1px #fff solid;
+	border: 2px #fff solid;
+	border-radius: 20px;
 }
 
 table th{
-	border: 1px #fff solid;
+	border: 2px #569cf1 solid;
 	padding-left: 20px;
 	padding-right: 20px;
+	border-radius: 10px;
 }
 
 table td{
-	border: 1px #fff solid;
+	border: 2px #569cf1 solid;
 	padding-left: 20px;
 	padding-right: 20px;
+	border-radius: 10px;
 }

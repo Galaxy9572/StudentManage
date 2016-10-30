@@ -21,10 +21,10 @@ window.onload = function() {
                                         var td4=document.createElement("td");
                                         var td5=document.createElement("td");
                                         var td6=document.createElement("td");
-                                        td1.innerHTML="<font color='white'>"+classID+"</font>";
-                                        td2.innerHTML="<font color='white'>"+className+"</font>";
-                                        td3.innerHTML="<font color='white'>"+classNum+"</font>";
-                                        td4.innerHTML="<font color='white'>"+teacherID+"</font>";
+                                        td1.innerHTML="<font color='black'>"+classID+"</font>";
+                                        td2.innerHTML="<font color='black'>"+className+"</font>";
+                                        td3.innerHTML="<font color='black'>"+classNum+"</font>";
+                                        td4.innerHTML="<font color='black'>"+teacherID+"</font>";
                                         var bt_select=document.createElement("button");
                                         bt_select.innerHTML="选择";
                                         bt_select.id="bt_select"+(i+1);

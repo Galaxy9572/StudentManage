@@ -24,11 +24,11 @@
 	<div id="result">
 		<table id="classTable" align="center">
 			<tr>
-				<th><font color="white">课程编号</font></th>
-				<th><font color="white">课程名</font></th>
-				<th><font color="white">课时</font></th>
-				<th><font color="white">授课老师编号</font></th>
-				<th colspan="2"><font color="white">操作</font></th>
+				<th><font color="black">课程编号</font></th>
+				<th><font color="black">课程名</font></th>
+				<th><font color="black">课时</font></th>
+				<th><font color="black">授课老师编号</font></th>
+				<th colspan="2"><font color="black">操作</font></th>
 			</tr>
 		</table>
 	</div>

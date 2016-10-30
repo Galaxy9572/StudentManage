@@ -24,7 +24,7 @@
 	</div>
 	<jsp:include page="/jsp/home.jsp"/>
 	<div id="add">
-		<table>
+		<table id="tab">
 			<tr>
 				<td>课程编号：</td>
 				<td><input type="text" name="classID" id="classID"

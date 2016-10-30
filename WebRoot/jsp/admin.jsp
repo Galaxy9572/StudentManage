@@ -70,7 +70,7 @@
 			<tr>
 				<td><input type="button" id="listAll" value="查看所有课程"
 					onclick="window.open('/StudentManage/jsp/allClasses.jsp')"></td>
-				<td><input type="button" id="addClass" value="添加新课程"
+				<td><input type="button" id="addClass" value=" 添加新课程 "
 					onclick="window.open('/StudentManage/jsp/addClass.jsp')"></td>
 			</tr>
 		</table>
