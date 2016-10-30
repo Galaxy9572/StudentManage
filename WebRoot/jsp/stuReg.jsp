@@ -19,7 +19,7 @@
 	<jsp:include page="/jsp/home.jsp"/>
 	<div id="reg">
 		<form action="/StudentManage/RegLoginServlet?cmd=stuReg" method="post">
-			<table>
+			<table id="tab">
 				<tr>
 					<td>学生姓名：</td>
 					<td><input type="text" name="stuName"  id="stuName" onblur="checkStuName()"></td>

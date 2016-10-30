@@ -8,18 +8,19 @@
 <html>
 <head>
 <title>老师注册</title>
-<link rel="stylesheet" type="text/css" href="/StudentManage/css/teacherReg.css">
+<link rel="stylesheet" type="text/css"
+	href="/StudentManage/css/teacherReg.css">
 </head>
 
 <body>
 	<div id="title">
 		<h1 id="h1">老师注册</h1>
 	</div>
-	<jsp:include page="/jsp/home.jsp"/>
+	<jsp:include page="/jsp/home.jsp" />
 	<div id="reg">
 		<form action="/StudentManage/RegLoginServlet?cmd=teacherReg"
 			method="post">
-			<table>
+			<table id="tab">
 				<tr>
 					<td>教师编号：</td>
 					<td><input type="text" name="teacherID"></td>
@@ -30,8 +31,9 @@
 				</tr>
 				<tr>
 					<td>性别：</td>
-					<td><input type="radio" value="男" name="gender" checked="checked">男<input
-						type="radio" value="女" name="gender">女</td>
+					<td><input type="radio" value="男" name="gender"
+						checked="checked">男<input type="radio" value="女"
+						name="gender">女</td>
 				</tr>
 				<tr>
 					<td>年龄：</td>
@@ -53,8 +55,8 @@
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="注册" name="yes"
-						onclick=a2()> <input type="reset" value="重置" name="reset"></td>
+					<td><input type="submit" value="注册" name="yes"></td><td><input
+						type="reset" value="重置" name="reset"></td>
 				</tr>
 			</table>
 		</form>

@@ -19,13 +19,16 @@ body {
 }
 
 #function{
-	width:40%;
-	height:30%;
+	background:#fff;
+	width:30%;
+	height:20%;
 	font-family: "微软雅黑";
 	font-size: 16px;
 	text-align: center;
-	margin-top: 10%;
-	margin-left: 30%;
+	border: 2px solid;
+	border-color: #fff;
+	border-radius:30px;
+	margin: 10% auto;
 }
 
 

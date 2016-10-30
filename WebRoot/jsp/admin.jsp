@@ -21,7 +21,7 @@
 	</div>
 	<jsp:include page="/jsp/home.jsp"/>
 	<div id="manage">
-		<table>
+		<table id="tab">
 			<tr>
 				<th colspan="3">学生管理</th>
 			</tr>

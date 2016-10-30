@@ -17,18 +17,18 @@
 	<div id="title">
 		<h1 id="h1">登录</h1>
 	</div>
-	<jsp:include page="/jsp/home.jsp"/>
+	<jsp:include page="/jsp/home.jsp" />
 	<div id="login">
 		<form action="/StudentManage/RegLoginServlet" method="post" id="form">
-			<table>
+			<table id="tab">
 				<tr>
 					<td>身份：</td>
-					<td>老师<input type="radio"  name="identity" id="teacher">学生<input
-						type="radio" name="identity" id="student"></td>
+					<td>老师<input type="radio" name="identity" id="teacher">学生<input
+						type="radio" name="identity" id="student" checked="checked"></td>
 				</tr>
 				<tr>
 					<td>编号（学号）：</td>
-					<td><input type="text" name="ID" id="ID" ></td>
+					<td><input type="text" name="ID" id="ID"></td>
 				</tr>
 				<tr>
 					<td>密码：</td>
@@ -38,8 +38,8 @@
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="登 录"
-						onclick="login()" /> <input type="reset" value="重 置" /></td>
+					<td><input type="submit" value="登 录" onclick="login()" /></td>
+					<td><input type="reset" value="重 置" /></td>
 				</tr>
 			</table>
 		</form>
