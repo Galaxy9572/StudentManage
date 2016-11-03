@@ -37,5 +37,4 @@ public interface TeacherManageService {
 	 * @return 成功返回true，否则返回false
 	 */
 	boolean login(String teacherID, String password);
-
 }

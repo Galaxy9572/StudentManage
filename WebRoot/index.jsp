@@ -10,7 +10,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>学生课程管理系统</title>  
+<title>学生课程管理系统</title>
 <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
@@ -18,7 +18,7 @@
 	<div id="title">
 		<h1 id="h1">学生课程管理系统</h1>
 	</div>
-	<jsp:include page="jsp/home.jsp"/>
+	<jsp:include page="jsp/home.jsp" />
 	<div id="function">
 		<table id="table">
 			<tr>
@@ -39,5 +39,10 @@
 			</tr>
 		</table>
 	</div>
+	<div id="rights">
+		<font color="#fff">1306102-04 廖俊瑶<br></font>
+		<font color="#fff">1306102-34 邓璇</font>
+	</div>
+	
 </body>
 </html>

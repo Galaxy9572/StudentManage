@@ -62,5 +62,4 @@ public class StudentManageServiceImpl implements StudentManageService {
 	public boolean selectClass(String stuNum, String className) {
 		return studentDao.updateSelectedClasses(stuNum, className);
 	}
-
 }

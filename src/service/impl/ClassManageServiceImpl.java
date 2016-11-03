@@ -27,5 +27,4 @@ public class ClassManageServiceImpl implements ClassManageService {
 	public List<ClassBean> listAllClasses() {
 		return classDao.listAllClasses();
 	}
-
 }

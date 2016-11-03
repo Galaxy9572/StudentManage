@@ -18,5 +18,4 @@ public class SelectClassServiceImpl implements SelectClassService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

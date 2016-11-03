@@ -39,6 +39,4 @@ public class ClassBean {
 	public void setTeacherID(String teacher) {
 		this.teacherID = teacher;
 	}
-	
-	
 }

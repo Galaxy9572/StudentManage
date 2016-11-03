@@ -36,5 +36,4 @@ public class TeacherManageServiceImpl implements TeacherManageService {
 	public TeacherBean queryTeacherByTeacherID(String teacherID) {
 		return teacherDao.queryTeacherByTeacherID(teacherID);
 	}
-
 }
